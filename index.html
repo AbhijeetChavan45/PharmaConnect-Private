@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PharmaConnect – Medicine Availability Made Simple</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/root.css">
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+            />
+          </svg>
+        </div>
+        Pharma<span class="dot">Connect</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#users">Who it's for</a></li>
+        <li><a href="login.html" class="nav-cta">Get Started</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-circle c1"></div>
+      <div class="hero-bg-circle c2"></div>
+      <div class="hero-bg-dot" style="top: 30%; left: 48%"></div>
+      <div
+        class="hero-bg-dot"
+        style="
+          top: 60%;
+          left: 52%;
+          background: var(--teal-100);
+          width: 12px;
+          height: 12px;
+        "
+      ></div>
+
+      <div class="hero-content">
+        <div class="hero-badge"><span></span> Real-time medicine discovery</div>
+        <h1>
+          Find Your <em>Medicine</em><br />Before the
+          <span class="accent-line">Emergency</span><br />Hits
+        </h1>
+        <p class="hero-sub">
+          PharmaConnect links you to nearby pharmacies with live stock updates,
+          price comparisons, and emergency medicine support — all in one place.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">Find Medicines Near You</a>
+          <a href="#how" class="btn-secondary">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polygon points="10 8 16 12 10 16 10 8" />
+            </svg>
+            See how it works
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Pharmacies Listed</div>
+          </div>
+          <div>
+            <div class="stat-num">10K+</div>
+            <div class="stat-label">Medicines Tracked</div>
+          </div>
+          <div>
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Emergency Support</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHONE MOCKUP -->
+      <div class="hero-visual">
+        <div style="position: relative; width: 320px; margin: 0 auto">
+          <!-- Float cards -->
+          <div class="float-card fc1">
+            <div class="fc-dot green"></div>
+            <div>
+              <div class="fc-label">Available Now</div>
+              <div class="fc-sub">MedPlus Pharmacy · 0.4km</div>
+            </div>
+          </div>
+          <div class="float-card fc2">
+            <div class="fc-num">₹42</div>
+            <div>
+              <div class="fc-label">Best Price</div>
+              <div class="fc-sub">Paracetamol 500mg</div>
+            </div>
+          </div>
+
+          <div class="phone-frame">
+            <div class="phone-status">
+              <span class="app-name">PharmaConnect</span>
+              <span class="notif-icon">📍 Bhayandhar, MH</span>
+            </div>
+            <div class="phone-search">
+              <div class="search-bar">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.35-4.35" />
+                </svg>
+                <span class="search-typing">Azithromycin 500mg</span>
+              </div>
+            </div>
+            <div class="phone-body">
+              <div class="section-label">Nearby Pharmacies · 3 found</div>
+
+              <div class="pharmacy-card active">
+                <div class="pharmacy-icon pi-teal">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                  </svg>
+                </div>
+                <div class="pharmacy-info">
+                  <div class="pharmacy-name">MedPlus Pharmacy</div>
+                  <div class="pharmacy-meta">⭐ 4.8 · 0.4 km · Open</div>
+                </div>
+                <div class="pharmacy-right">
+                  <div class="avail-badge avail-yes">In Stock</div>
+                  <div class="price-tag">₹42</div>
+                </div>
+              </div>
+
+              <div class="pharmacy-card">
+                <div class="pharmacy-icon pi-amber">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </div>
+                <div class="pharmacy-info">
+                  <div class="pharmacy-name">Apollo Pharmacy</div>
+                  <div class="pharmacy-meta">⭐ 4.5 · 1.1 km · Open</div>
+                </div>
+                <div class="pharmacy-right">
+                  <div class="avail-badge avail-low">Low Stock</div>
+                  <div class="price-tag">₹48</div>
+                </div>
+              </div>
+
+              <div class="pharmacy-card">
+                <div class="pharmacy-icon pi-coral">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                </div>
+                <div class="pharmacy-info">
+                  <div class="pharmacy-name">City Medicals</div>
+                  <div class="pharmacy-meta">⭐ 4.2 · 2.3 km · Closed</div>
+                </div>
+                <div class="pharmacy-right">
+                  <div class="avail-badge avail-no">Out of Stock</div>
+                  <div class="price-tag">₹39</div>
+                </div>
+              </div>
+
+              <button class="emergency-btn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                  />
+                  <line x1="12" y1="9" x2="12" y2="13" />
+                  <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+                Emergency Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">How it works</span>
+        <h2>Three Simple Steps to Your Medicine</h2>
+        <p class="section-desc">
+          No more wandering pharmacy to pharmacy. PharmaConnect gets you what
+          you need, fast.
+        </p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal" data-step="01">
+          <div class="step-icon si-teal">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </div>
+          <div class="step-title">Search Your Medicine</div>
+          <p class="step-desc">
+            Type the medicine name or scan your prescription. Our database
+            covers 10,000+ medicines with real-time stock data.
+          </p>
+        </div>
+        <div
+          class="step-card reveal"
+          data-step="02"
+          style="transition-delay: 0.1s"
+        >
+          <div class="step-icon si-amber">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="step-title">Discover Nearby Pharmacies</div>
+          <p class="step-desc">
+            See pharmacies on a live map sorted by distance, availability, and
+            price. Compare all options at a glance.
+          </p>
+        </div>
+        <div
+          class="step-card reveal"
+          data-step="03"
+          style="transition-delay: 0.2s"
+        >
+          <div class="step-icon si-coral">
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 12 20 22 4 22 4 12" />
+              <rect x="2" y="7" width="20" height="5" />
+              <path d="M12 22V7" />
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+            </svg>
+          </div>
+          <div class="step-title">Reserve or Get Delivery</div>
+          <p class="step-desc">
+            Book your medicine for pickup or request home delivery. Track your
+            order in real time until it arrives.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section" id="features">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Platform Features</span>
+        <h2>Built for Every Healthcare Need</h2>
+        <p class="section-desc">
+          From routine prescriptions to critical emergencies, PharmaConnect has
+          you covered.
+        </p>
+      </div>
+      <div class="features-grid" style="margin-top: 3rem">
+        <div class="feature-card reveal">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <div class="feat-title">Real-Time Stock Availability</div>
+          <p class="feat-desc">
+            Pharmacies update their inventory live. You see exactly what's in
+            stock before stepping out the door.
+          </p>
+          <span class="feat-tag">Live Updates</span>
+        </div>
+        <div class="feature-card reveal" style="transition-delay: 0.1s">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <div class="feat-title">Price Comparison</div>
+          <p class="feat-desc">
+            Compare medicine prices across multiple pharmacies and always get
+            the best deal nearby.
+          </p>
+          <span class="feat-tag orange">Save Money</span>
+        </div>
+        <div class="feature-card emerg reveal" style="transition-delay: 0.2s">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+              />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </div>
+          <div class="feat-title">Emergency Medicine Request</div>
+          <p class="feat-desc">
+            Flag a search as urgent. The system alerts the nearest pharmacies
+            and prioritises your request immediately.
+          </p>
+          <span class="feat-tag red">Priority Alert</span>
+        </div>
+        <div class="feature-card wide reveal" style="transition-delay: 0.3s">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="3" y1="9" x2="21" y2="9" />
+              <line x1="3" y1="15" x2="21" y2="15" />
+              <line x1="9" y1="3" x2="9" y2="21" />
+              <line x1="15" y1="3" x2="15" y2="21" />
+            </svg>
+          </div>
+          <div class="feat-title">Pharmacy Inventory Dashboard</div>
+          <p class="feat-desc">
+            For pharmacy owners — manage your stock, receive orders, verify
+            prescriptions, and view sales analytics all from one clean
+            dashboard. No technical knowledge required.
+          </p>
+          <span class="feat-tag">For Pharmacies</span>
+        </div>
+        <div class="feature-card reveal" style="transition-delay: 0.35s">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+          </div>
+          <div class="feat-title">Prescription Upload</div>
+          <p class="feat-desc">
+            Upload your prescription directly. The pharmacy verifies it
+            digitally — no physical copy needed at the counter.
+          </p>
+          <span class="feat-tag">Digital Rx</span>
+        </div>
+        <div class="feature-card reveal" style="transition-delay: 0.4s">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              />
+            </svg>
+          </div>
+          <div class="feat-title">Smart Notifications</div>
+          <p class="feat-desc">
+            Get alerts when your order is confirmed, ready for pickup, or out
+            for delivery. Never miss an update.
+          </p>
+          <span class="feat-tag">Order Alerts</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="users-section" id="users">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Who it's for</span>
+        <h2>A Platform Built for Everyone</h2>
+        <p class="section-desc">
+          Patients, pharmacy owners, and emergency users all have a home on
+          PharmaConnect.
+        </p>
+      </div>
+      <div class="users-grid">
+        <div class="user-card uc-teal reveal">
+          <div class="user-avatar ua-teal">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <div class="user-title">Patients</div>
+          <p class="user-desc">
+            Find medicines fast, compare prices, and book pickups or delivery
+            without leaving home.
+          </p>
+          <ul class="user-perks">
+            <li>
+              <span class="perk-dot pd-teal"></span>Search 10,000+ medicines
+            </li>
+            <li>
+              <span class="perk-dot pd-teal"></span>Live stock & price
+              comparison
+            </li>
+            <li>
+              <span class="perk-dot pd-teal"></span>Upload prescriptions
+              digitally
+            </li>
+            <li>
+              <span class="perk-dot pd-teal"></span>Real-time order tracking
+            </li>
+          </ul>
+        </div>
+        <div class="user-card uc-amber reveal" style="transition-delay: 0.1s">
+          <div class="user-avatar ua-amber">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <div class="user-title">Pharmacies</div>
+          <p class="user-desc">
+            Go digital, reach more customers, manage inventory, and grow your
+            business effortlessly.
+          </p>
+          <ul class="user-perks">
+            <li>
+              <span class="perk-dot pd-amber"></span>Digital inventory
+              management
+            </li>
+            <li>
+              <span class="perk-dot pd-amber"></span>Receive & confirm orders
+              online
+            </li>
+            <li>
+              <span class="perk-dot pd-amber"></span>Prescription verification
+            </li>
+            <li>
+              <span class="perk-dot pd-amber"></span>Sales & analytics dashboard
+            </li>
+          </ul>
+        </div>
+        <div class="user-card uc-coral reveal" style="transition-delay: 0.2s">
+          <div class="user-avatar ua-coral">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+              />
+            </svg>
+          </div>
+          <div class="user-title">Emergency Users</div>
+          <p class="user-desc">
+            Critical medicine need? Flag it as urgent and get priority
+            assistance from the nearest pharmacy.
+          </p>
+          <ul class="user-perks">
+            <li>
+              <span class="perk-dot pd-coral"></span>Priority emergency flagging
+            </li>
+            <li>
+              <span class="perk-dot pd-coral"></span>Instant pharmacy alerts
+            </li>
+            <li>
+              <span class="perk-dot pd-coral"></span>Fastest available stock
+              shown first
+            </li>
+            <li><span class="perk-dot pd-coral"></span>24/7 support access</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2 class="reveal">Ready to Find Your Medicine Faster?</h2>
+      <p class="reveal">
+        Join thousands of users already using PharmaConnect for smarter, faster
+        healthcare access.
+      </p>
+      <div class="cta-btns reveal">
+        <a href="#" class="btn-white">Get Started Free</a>
+        <a href="#" class="btn-outline-white">Register Your Pharmacy</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">Pharma<span>Connect</span></div>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">For Pharmacies</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 PharmaConnect. All rights reserved.</div>
+    </footer>
+
+    <script>
+      // Scroll reveal
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      // Nav scroll effect
+      const nav = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
+        nav.style.boxShadow =
+          window.scrollY > 40 ? "0 4px 30px rgba(0,0,0,.08)" : "none";
+      });
+    </script>
+  </body>
+</html>
