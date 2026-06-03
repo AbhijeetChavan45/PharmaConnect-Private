@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Dashboard – PharmaConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../css/patient-dashboard.css"/>
+ 
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- SIDEBAR OVERLAY (mobile tap-to-close) -->
+  <div class="sb-overlay" id="sbOverlay" onclick="closeSidebar()"></div>
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar" id="sidebar">
+
+    <a href="#" class="sb-logo">
+      <div class="sb-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      </div>
+      <span class="sb-logo-text">Pharma<span>Connect</span></span>
+    </a>
+
+    <nav class="sb-nav">
+      <div class="sb-section-lbl">Main</div>
+
+      <a class="sb-item active" href="../patient/patient-dashboard.html" onclick="setActive(this)">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Dashboard
+      </a>
+      <a class="sb-item" href="../patient/medicine-search.html" onclick="setActive(this)">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Search Medicines
+      </a>
+      <a class="sb-item" href="../patient/nearby-pharmacy.html" onclick="setActive(this)">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Nearby Pharmacies
+      </a>
+
+      <div class="sb-section-lbl" style="margin-top:.5rem">Orders</div>
+
+      <a class="sb-item" href="../patient/my-orders.html" onclick="setActive(this)">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        My Orders
+        <span class="sb-badge">2</span>
+      </a>
+      <a class="sb-item" href="../patient/prescription-upload.html" onclick="setActive(this)">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+        Prescriptions
+      </a>
+      <a class="sb-item" href="../patient/order-history.html" onclick="setActive(this)">
+        <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        Order History
+      </a>
+
+      <div class="sb-section-lbl" style="margin-top:.5rem">Account</div>
+
+      <a class="sb-item" href="../patient/account-center.html" onclick="setActive(this)">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Account Center
+      </a>
+      <a class="sb-item" href="../patient/help-support.html" onclick="setActive(this)">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65,1.65 0 0 0-1.51 1z"/></svg>
+        Help & Support
+      </a>
+    </nav>
+
+    <div class="sb-user">
+      <div class="sb-avatar">AS</div>
+      <div class="sb-user-info">
+        <div class="sb-user-name">Aarav Shah</div>
+        <div class="sb-user-role">Patient</div>
+      </div>
+      <button class="sb-logout" title="Logout" onclick="alert('Logout')">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ═══ MAIN ═══ -->
+  <div class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger" id="hamburger" onclick="openSidebar()">
+          <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="topbar-search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search medicine, pharmacy…"/>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="tb-btn" title="Notifications">
+          <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="tb-dot"></span>
+        </button>
+        <button class="tb-btn" title="Location">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </button>
+        <div class="tb-user">
+          <div class="tb-avatar">AS</div>
+          <span class="tb-name">Aarav Shah</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE -->
+    <main class="page">
+
+      <!-- Greeting row -->
+      <div class="greeting">
+        <div>
+          <h1>Good morning, <span>Aarav</span> 👋</h1>
+          <p>Friday, 22 May 2026 &nbsp;·&nbsp; Sangli, Maharashtra</p>
+        </div>
+        <button class="emg-btn">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Emergency Request
+        </button>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="stats">
+        <div class="scard">
+          <div class="sc-icon ic-teal">
+            <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <div>
+            <div class="sc-val">12</div>
+            <div class="sc-lbl">Total Orders</div>
+            <div class="sc-delta d-up">↑ 3 this month</div>
+          </div>
+        </div>
+        <div class="scard">
+          <div class="sc-icon ic-amber">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="sc-val">2</div>
+            <div class="sc-lbl">Active Orders</div>
+            <div class="sc-delta d-warn">In progress</div>
+          </div>
+        </div>
+        <div class="scard">
+          <div class="sc-icon ic-teal">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <div class="sc-val">4</div>
+            <div class="sc-lbl">Prescriptions</div>
+            <div class="sc-delta d-up">3 verified</div>
+          </div>
+        </div>
+        <div class="scard">
+          <div class="sc-icon ic-blue">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <div class="sc-val">₹840</div>
+            <div class="sc-lbl">Amount Saved</div>
+            <div class="sc-delta d-up">vs MRP</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search banner -->
+      <div class="search-banner">
+        <h2>Search Medicine Availability</h2>
+        <p>Find real-time stock across 500+ pharmacies near you</p>
+        <div class="sb-row">
+          <div class="sb-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input class="sb-input" id="medSearch" type="text" placeholder="e.g. Azithromycin 500mg…"/>
+          </div>
+          <button class="sb-go" onclick="doSearch()">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            Search
+          </button>
+        </div>
+        <div class="quick-tags">
+          <span class="qtag" onclick="fillMed('Paracetamol 500mg')">Paracetamol</span>
+          <span class="qtag" onclick="fillMed('Azithromycin 500mg')">Azithromycin</span>
+          <span class="qtag" onclick="fillMed('Metformin 500mg')">Metformin</span>
+          <span class="qtag" onclick="fillMed('Amoxicillin 250mg')">Amoxicillin</span>
+          <span class="qtag" onclick="fillMed('Pantoprazole 40mg')">Pantoprazole</span>
+          <span class="qtag" onclick="fillMed('Cetirizine 10mg')">Cetirizine</span>
+        </div>
+      </div>
+
+      <!-- Orders + Pharmacies -->
+      <div class="two-col">
+
+        <!-- Recent Orders -->
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Recent Orders</span>
+            <a href="#" class="card-link">View all →</a>
+          </div>
+          <div class="card-body">
+            <div class="o-row">
+              <div class="o-icon oi-t"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+              <div class="o-info"><div class="o-name">Azithromycin 500mg × 6</div><div class="o-meta">MedPlus · 20 May</div></div>
+              <div class="o-right"><div class="o-status os-done">Delivered</div><div class="o-price">₹252</div></div>
+            </div>
+            <div class="o-row">
+              <div class="o-icon oi-a"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+              <div class="o-info"><div class="o-name">Metformin 500mg × 30</div><div class="o-meta">Apollo Pharmacy · 22 May</div></div>
+              <div class="o-right"><div class="o-status os-transit">In Transit</div><div class="o-price">₹189</div></div>
+            </div>
+            <div class="o-row">
+              <div class="o-icon oi-t"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+              <div class="o-info"><div class="o-name">Cetirizine 10mg × 10</div><div class="o-meta">City Medicals · 22 May</div></div>
+              <div class="o-right"><div class="o-status os-ready">Ready Pickup</div><div class="o-price">₹68</div></div>
+            </div>
+            <div class="o-row">
+              <div class="o-icon oi-g"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+              <div class="o-info"><div class="o-name">Pantoprazole 40mg × 15</div><div class="o-meta">HealthMart · 18 May</div></div>
+              <div class="o-right"><div class="o-status os-done">Delivered</div><div class="o-price">₹145</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nearby Pharmacies -->
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Nearby Pharmacies</span>
+            <a href="#" class="card-link">View map →</a>
+          </div>
+          <div class="card-body">
+            <div class="ph-row">
+              <div class="ph-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div class="ph-info"><div class="ph-name">MedPlus Pharmacy</div><div class="ph-meta">⭐ 4.8 · Miraj Rd, Sangli</div></div>
+              <div class="ph-right"><span class="ph-badge ph-open">Open</span><span class="ph-dist">0.4 km</span></div>
+            </div>
+            <div class="ph-row">
+              <div class="ph-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div class="ph-info"><div class="ph-name">Apollo Pharmacy</div><div class="ph-meta">⭐ 4.5 · Vishrambag, Sangli</div></div>
+              <div class="ph-right"><span class="ph-badge ph-open">Open</span><span class="ph-dist">1.1 km</span></div>
+            </div>
+            <div class="ph-row">
+              <div class="ph-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div class="ph-info"><div class="ph-name">City Medicals</div><div class="ph-meta">⭐ 4.2 · Gaon Bhag, Sangli</div></div>
+              <div class="ph-right"><span class="ph-badge ph-open">Open</span><span class="ph-dist">2.3 km</span></div>
+            </div>
+            <div class="ph-row">
+              <div class="ph-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div class="ph-info"><div class="ph-name">HealthMart Pharmacy</div><div class="ph-meta">⭐ 4.0 · Nehru Chowk, Sangli</div></div>
+              <div class="ph-right"><span class="ph-badge ph-closed">Closed</span><span class="ph-dist">3.7 km</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prescriptions + Reminders -->
+      <div class="three-col">
+
+        <!-- Prescriptions -->
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">My Prescriptions</span>
+            <a href="#" class="card-link">View all →</a>
+          </div>
+          <div class="card-body">
+            <div class="rx-row">
+              <div class="rx-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+              <div class="rx-info"><div class="rx-name">Dr. Sharma – Diabetes Rx</div><div class="rx-meta">Uploaded 15 May · Expires 15 Aug 2026</div></div>
+              <span class="rx-status rxs-ok">Verified</span>
+            </div>
+            <div class="rx-row">
+              <div class="rx-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+              <div class="rx-info"><div class="rx-name">Dr. Kulkarni – Antibiotic Course</div><div class="rx-meta">Uploaded 20 May · Expires 20 Jun 2026</div></div>
+              <span class="rx-status rxs-ok">Verified</span>
+            </div>
+            <div class="rx-row">
+              <div class="rx-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+              <div class="rx-info"><div class="rx-name">Dr. Patil – Allergy Prescription</div><div class="rx-meta">Uploaded 22 May · Pending review</div></div>
+              <span class="rx-status rxs-pend">Pending</span>
+            </div>
+            <div class="rx-row">
+              <div class="rx-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+              <div class="rx-info"><div class="rx-name">Dr. Desai – BP Medication</div><div class="rx-meta">Uploaded 10 Jan · Expired</div></div>
+              <span class="rx-status rxs-exp">Expired</span>
+            </div>
+            <button class="upload-btn">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Upload New Prescription
+            </button>
+          </div>
+        </div>
+
+        <!-- Reminders -->
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Today's Reminders</span>
+            <a href="#" class="card-link">Edit →</a>
+          </div>
+          <div class="card-body">
+            <div class="rem-item">
+              <div class="rem-dot rd-t"></div>
+              <div class="rem-info"><div class="rem-name">Metformin 500mg</div><div class="rem-time">After breakfast · 9:00 AM</div></div>
+              <div class="rem-check checked" onclick="this.classList.toggle('checked')"></div>
+            </div>
+            <div class="rem-item">
+              <div class="rem-dot rd-a"></div>
+              <div class="rem-info"><div class="rem-name">Cetirizine 10mg</div><div class="rem-time">After lunch · 1:30 PM</div></div>
+              <div class="rem-check" onclick="this.classList.toggle('checked')"></div>
+            </div>
+            <div class="rem-item">
+              <div class="rem-dot rd-t"></div>
+              <div class="rem-info"><div class="rem-name">Metformin 500mg</div><div class="rem-time">After dinner · 8:00 PM</div></div>
+              <div class="rem-check" onclick="this.classList.toggle('checked')"></div>
+            </div>
+            <div class="rem-item">
+              <div class="rem-dot rd-c"></div>
+              <div class="rem-info"><div class="rem-name">Pantoprazole 40mg</div><div class="rem-time">Before dinner · 7:30 PM</div></div>
+              <div class="rem-check" onclick="this.classList.toggle('checked')"></div>
+            </div>
+            <div class="rem-item">
+              <div class="rem-dot rd-a"></div>
+              <div class="rem-info"><div class="rem-name">Vitamin D3</div><div class="rem-time">Before bed · 10:00 PM</div></div>
+              <div class="rem-check" onclick="this.classList.toggle('checked')"></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end three-col -->
+
+    </main><!-- end page -->
+  </div><!-- end main -->
+</div><!-- end shell -->
+
+<script>
+  function openSidebar() {
+    document.getElementById('sidebar').classList.add('open');
+    document.getElementById('sbOverlay').classList.add('open');
+  }
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sbOverlay').classList.remove('open');
+  }
+  function setActive(el) {
+    event.preventDefault();
+    document.querySelectorAll('.sb-item').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+    // close sidebar on mobile after tap
+    if (window.innerWidth < 900) closeSidebar();
+  }
+  function fillMed(v) { document.getElementById('medSearch').value = v; }
+  function doSearch() {
+    const v = document.getElementById('medSearch').value.trim();
+    if (v) alert('Searching for: ' + v);
+  }
+</script>
+</body>
+</html>
