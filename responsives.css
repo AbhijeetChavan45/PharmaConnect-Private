@@ -1,0 +1,29 @@
+@media(max-width:992px){
+
+    .features-grid,
+    .stats-grid,
+    .steps,
+    .testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .features-grid,
+    .stats-grid,
+    .steps,
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta-content h2{
+        font-size:32px;
+    }
+
+}
